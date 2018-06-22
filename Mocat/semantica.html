@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semantica</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header,
+        nav,
+        section,
+        aside,
+        footer {
+            background-color: darkturquoise;
+        }
+
+        p {
+            text-align: center;
+            border: 1px solid blue;
+            /* margin: 40px auto; */
+        }
+
+        header {
+            height: 100px;
+            padding: 20px;
+            border: 1px solid red;
+            background-color: rgba(161, 228, 202, 0.392);
+        }
+
+        nav {
+            margin: 5px 0;
+        }
+
+        section {
+            width: 50%;
+        }
+
+        aside {
+            width: 50%;
+            float: right;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            margin-left: -200px;
+            /*negative half the width */
+            background: red;
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Header</p>
+    </header>
+    <nav>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </nav>
+    <section>
+        <p> section</p>
+    </section>
+    <aside>
+        <p>aside</p>
+    </aside>
+    <footer>
+        <p>footer</p>
+    </footer>
+</body>
+
+</html>

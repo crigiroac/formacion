@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            border: 1px solid red;
+            box-sizing: border-box
+        }
+
+        header,
+        nav {
+            text-align: center;
+        }
+
+        .header {
+            background-color: tomato;
+            color: white;
+            padding: 40px;
+            display: flex;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            background-color: rgb(55, 53, 53);
+        }
+
+        .nav a {
+            padding: 20px 10px;
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+
+        .nav a:hover {
+            background-color: tomato
+        }
+
+        .contenedor {
+            display: flex;
+        }
+
+        .side {
+            flex: 30%;
+            background-color: grey;
+            height: 30px;
+        }
+
+        .main {
+            flex: 70%;
+            background-color: greenyellow;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: aqua;
+            padding: 50px;
+        }
+
+        @media screen and (max-width:768px) {
+            .nav {
+                /* justify-content: space-around; */
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .circulo {
+            width: 100px;
+            height: 100px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background: #5cb85c;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="side">
+        <div class="circulo"></div>
+        </div>
+        <div class="main">
+            <h1>Titulo de este sitio</h1>
+            <p>Con
+                <b>Flex</b> layout</p>
+        </div>
+    </header>
+    <nav class="nav">
+        <a href="#">Inicio</a>
+        <a href="#">Blog</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Acerca</a>
+    </nav>
+    <section class="contenedor">
+        <aside class="side"></aside>
+        <main class="main"></main>
+    </section>
+    <footer class="footer"></footer>
+</body>
+
+</html>

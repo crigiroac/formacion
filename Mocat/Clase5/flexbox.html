@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .padre{
+            display: flex;
+            /* height: 400px; */
+            height: 100vh;
+            border: 1px solid red;
+
+            /* cmabio de eje principal */
+            flex-direction: row;
+            /* reubica los hijos o los ajusta */
+            flex-wrap: nowrap;
+            /* justificacion del contenido  */
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            justify-content: space-between;
+            /* para centrar en vertical */
+            align-items: center;
+
+        
+        }
+    .hijo{
+        width: 200px;
+        height: 200px;;
+        margin: 10px;
+        background: tomato;
+
+        color: white;
+        font-size: 36px;
+        text-align: center;
+        line-height: 200px;        
+    }
+    .hijo2{
+        order: 1;
+    }
+    </style>
+</head>
+<body>
+    <!-- los div displey en bloque -->
+    <div class="padre">
+        <div class="hijo hijo1">1</div>
+        <div class="hijo hijo2">2</div>
+         <div class="hijo hijo3">3</div>
+        <!--<div class="hijo">4</div>
+        <div class="hijo">5</div> -->
+    </div>
+</body>
+</html>

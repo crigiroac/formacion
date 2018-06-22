@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css</title>
+    <!-- <link rel="stylesheet" href="../reset.css"> -->
+    <style>
+        /* tipos de selectores  */
+        p {
+            color: red;
+        }
+        #id-div{
+            background-color: rgb(45, 136, 22);
+        }
+        div {
+            background-color: rgb(39, 189, 26);
+        }
+        .azul{
+            color: blue;
+        }
+        input[type=email]{ background-color: chocolate}
+        input[type=button]{background-color: darkgoldenrod}
+        
+        li{background-color: blue;}
+        li[data-categoria=vegetal]{background-color: green}
+
+        .banano{background-color: yellow}
+        .sandia{background-color: red}
+        li[data-content="Limon"]{background-color: greenyellow}
+        
+        /* seudo-selectores */
+        a:hover{cursor: wait}
+        li:first-child{color: red}
+        li:nth-child(3){color: aquamarine}
+
+        /* combinaciones  7 combinar elementos u */
+        a, p, div, .azul {
+            color: red;
+        }
+        /* div que contenga un parrafo */
+        div p{}
+        /* hijos directos de un div */
+        div>p{}
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="al">
+        <p>
+            <div>test</div>
+        </p>
+        <p>
+            <div>test</div>
+        </p>
+        <p>
+            <div>test</div>
+        </p>
+    </div>
+
+
+<a href="">prueba</a>
+
+    <p class="azul">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium sed pariatur optio eum numquam. Labore facere tempore
+        libero voluptatum ratione voluptates mollitia ullam, omnis nihil eligendi ea, sit consectetur aspernatur!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ipsam dolores sed quaerat quibusdam. Itaque eligendi
+        odio dolorum alias, nemo est natus incidunt exercitationem impedit, suscipit qui sint accusantium voluptatem.</p>
+    <div id="id-div">contenido del div</div>
+    <input type="button" value="enviar">
+    <input type="email" name="email" id="">
+
+
+    <ul>
+        <li data-categoria="vegetal">Tomates</li>
+        <li data-categoria="vegetal">Zanahoria</li>
+        <li data-categoria="vegetal">Arveja</li>
+        <li data-categoria="fruta">Limon</li>
+        <li class="banano" data-categoria="fruta">banano</li>
+        <li class= "sandia" data-categoria="fruta">sandia</li>
+    </ul>
+</body>
+
+</html>
