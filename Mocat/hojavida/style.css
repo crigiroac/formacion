@@ -24,6 +24,9 @@ header {
 .nav a:hover {
     background-color: rgb(50, 50, 153);
 }
+.active{
+    background-color: rgb(50, 50, 153);
+}
 .imagen {
     width: 100px;
     height: 100px;
@@ -39,7 +42,7 @@ header {
     
 }
 .aside{
-    border: .5px solid blue;
+    /* border: .5px solid blue; */
     width: 40%;
 }
 @media screen and (max-width:768px) {
