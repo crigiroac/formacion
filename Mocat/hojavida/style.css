@@ -1,6 +1,6 @@
-* {
-    /* border: 1px solid red; */
-}
+*{
+    /* border: 1px solid red;  */
+} 
 
 header {
     display: flex;
@@ -10,7 +10,7 @@ header {
 .nav {
     display: flex;
     justify-content: flex-end;
-    background-color: rgb(55, 53, 53);
+    background-color: rgba(128, 128, 128, 0.433);
 }
 
 .nav a {
@@ -21,11 +21,23 @@ header {
     font-size: 12px;
 }
 
+h3 a {
+    padding: 20px 10px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
 .nav a:hover {
-    background-color: rgb(50, 50, 153);
+    background-color: rgb(76, 76, 78, 0.788);
 }
 .active{
-    background-color: rgb(50, 50, 153);
+    background-color: rgba(50, 50, 153);
+}
+.inactive{
+    background-color: rgba(76, 76, 78, 0.788);
+
 }
 .imagen {
     width: 100px;
@@ -44,6 +56,11 @@ header {
 .aside{
     /* border: .5px solid blue; */
     width: 40%;
+}
+.aside1{
+    /* border: .5px solid blue; */
+    width: 100%;
+    text-align: center;
 }
 @media screen and (max-width:768px) {
     .nav {
