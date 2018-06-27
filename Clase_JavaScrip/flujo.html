@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flujo</title>
+</head>
+
+<body>
+    <script>
+        var x = 5;
+        if (x == 5) {
+            console.log("verdadero");
+        }
+        else {
+            console.log("false");
+        }
+        if (x) {
+            console.log("verdadero");
+        }
+        else {
+            console.log("false");
+        }
+        var xx;
+        if (xx) {
+            console.log("verdadero");
+        }
+        else {
+            console.log("false");
+        }
+
+        var a = 5;
+        switch (a) {
+            case 5:
+                console.log(a);
+                break;
+            case 4:
+                console.log(a);
+                break;
+            default:
+                console.log('por defecto');
+                break;
+        }
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index];
+            console.log('for',element);
+        }
+        array.forEach(element => {
+            console.log('forEach',element);
+        });
+
+        // array.forEach(function(elemento){
+        //     console.log(elemento);
+        // });
+
+        let index = 0;
+        console.log('Ini while', array.length);
+        while (index<array.length) {
+            console.log('while', array[index]);
+            index++;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        var miArray1=[];
+        var miArray=[2, 'lunes', false];
+        console.log(miArray);
+        console.log(miArray[0]);
+        
+        var dias=['lun','mar'];
+        dias[2]='miercoles';
+        dias.push('jueves');
+
+        // eliminar el ultimo
+        // dias.pop();
+        // eliminar el primero
+        // dias.shift();
+        // para insertar en una posicion espcificada en el primer valor, y los valores apartir del segundo
+        dias.splice(1,0,'domin', 'insert')
+        // elimina elementos donde el primer valor es la posicion y la segunda cuantos elementos a eliminar
+        dias.splice(1,1)
+        console.log("dias: " , dias);
+
+
+    </script>
+</body>
+</html>

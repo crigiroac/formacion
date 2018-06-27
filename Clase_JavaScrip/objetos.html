@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objetos</title>
+</head>
+
+<body>
+    <script>
+        var celular = {};
+        // inicializar el objeto
+        var celular = {
+            marca:"Huawei",
+            sistema:"Android",
+            encender: function(){console.log('Celu Encendidos');},
+            apps:['whas','mail','explo']
+        };
+        // tiene propiedades
+        celular.sistema = "Android";
+        celular.marca = "Samsung";
+        // pueden tener metodos 
+        celular.encender= function(){ console.log('Celu Encendido'); return "";}
+        console.log(typeof (celular))
+        console.log(celular.marca)
+        console.log(celular.encender())
+        console.log(celular)
+    </script>
+</body>
+
+</html>
