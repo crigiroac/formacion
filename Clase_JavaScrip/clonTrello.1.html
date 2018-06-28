@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clonTrello</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* border: 1px solid red; */
+        }
+
+        body {
+            margin: 0px;
+            background-color: rgb(0, 121, 191)
+        }
+
+        #header {
+            height: 40px;
+            background-color: #026aa7;
+
+        }
+
+        #header p {
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        #contenedor {
+            margin: 10px;
+            white-space: nowrap;
+        }
+
+        #nuevalista {
+            width: 272px;
+        }
+
+        .entrada {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: block;
+            padding: 10px;
+            background: #49852e;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            margin: 5px;
+        }
+
+        .formulario {
+            background: #cecece;
+            padding: 4px;
+            border-radius: 4px;
+
+        }
+
+        .nombrelista {
+            width: 96%;
+            margin: 5px;
+            border-radius: 5PX;
+            background: rgba(0, 0, 0, .05);
+            border: none;
+            border-color: #251e1e;
+            box-shadow: inset 0 1px 8px rgba(0, 0, 0, .15);
+            padding: 10px;
+        }
+
+        .ocultar {
+            display: none;
+        }
+
+        .lista {
+            width: 272px;
+            margin: 0 4px;
+            background: #cecece;
+            padding: 5px 10px;
+            border-radius: 5px
+        }
+
+        .lista h1 {
+            font-size: 12px;
+
+        }
+
+        .lista .tarjeta {
+            background: white;
+            margin: 5px;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        .lista .agregaartarjeta {
+            display: block;
+            background: white;
+            margin: 5px;
+            padding: 3px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .lista .agregaartarjeta:hover {
+            background: grey;
+        }
+
+        .display-inlineblock{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" id="header">
+        <p>Trello Clone</p>
+    </div>
+
+    <div id="contenedor">
+        <div class="lista ocultar" id="lista">
+            <h1>titutlo</h1>
+            <div class="tarjeta">contenido</div>
+            <div class="tarjeta">contenido</div>
+            <div class="tarjeta">contenido</div>
+            <a href="#" id="agregaartarjeta" class="agregaartarjeta">agregar tarjeta...</a>
+            <form action="" id="formularioTarjeta" class="formulario ocultar">
+                    <input type="text" id="nombreTarjeta" class="entrada" placeholder="Añadir una Tarjeta...">
+                    <input type="submit" id="guardarTarjeta" class="btn" value="Añadir">
+            </form>
+
+        </div>
+        <section id="nuevalista" class="display-inlineblock">
+            <div id="agregarlista">añadir lista..</div>
+            <form action="" id="formulario" class="formulario ocultar">
+                <input type="text" id="nombrelista" class="entrada" placeholder="Añadir una lista...">
+                <input type="submit" id="guardarLista" class="btn" value="Guardar">
+            </form>
+        </section>
+    </div>
+    <script>
+        var agregarlista = document.getElementById('agregarlista');
+        var formulario = document.getElementById('formulario');
+        var guardarLista=document.getElementById('guardarLista');
+        var agregaartarjeta = document.getElementById('agregaartarjeta');
+        var lista = document.getElementById('lista');
+        var formularioTarjeta=document.getElementById('formularioTarjeta');
+        var nombrelista=document.getElementById('nombrelista');
+        var contenedor=document.getElementById('contenedor');
+        var numerolista=0;
+        agregarlista.addEventListener('click', function () {
+            console.log('click')
+            formulario.classList.remove('ocultar');
+            agregarlista.classList.add('ocultar');
+        });
+
+       
+
+        guardarLista.addEventListener('click', function (e) {
+                e.preventDefault();
+                console.log('guardarLista')
+                var listanew= document.createElement('div');
+                listanew.classList.add('lista');
+                listanew.classList.add('display-inlineblock');
+               
+                var titulo=document.createElement('h1');
+                titulo.innerText=nombrelista.value;
+                listanew.appendChild(titulo);
+
+                var anew = document.createElement('a');
+                anew.innerText='agregar tarjeta..';
+                anew.classList.add('agregaartarjeta');
+                anew.id='lista'+ numerolista
+                listanew.appendChild(anew);
+
+                var formularioTarjeta =document.createElement('form');
+                formularioTarjeta.classList.add('formulario');
+                formularioTarjeta.classList.add('ocultar');
+                formularioTarjeta.id='formularioTarjeta'+ numerolista
+
+                var inputtext =document.createElement('input');
+                inputtext.classList.add('entrada');
+                inputtext.setAttribute('type','text');
+                inputtext.setAttribute('placeholder','Añadir una Tarjeta...');
+                inputtext.id='inputtext'+ numerolista
+                
+                formularioTarjeta.appendChild(inputtext);
+
+                var inputsubmit =document.createElement('input');
+                inputsubmit.classList.add('btn');
+                inputsubmit.setAttribute('type','submit')
+                inputsubmit.setAttribute('value','Añadir');
+                inputsubmit.id='inputsubmit'+ numerolista
+
+                formularioTarjeta.appendChild(inputsubmit);
+
+                listanew.appendChild(formularioTarjeta);
+
+                listanew.id='Lista'+numerolista;
+                numerolista++;
+                contenedor.insertBefore(listanew,contenedor.lastElementChild);
+
+        });
+
+        
+        agregaartarjeta.addEventListener('click', function () {
+            console.log(formularioTarjeta);
+            formularioTarjeta.classList.remove('ocultar');
+            agregaartarjeta.classList.add('ocultar');
+
+            // var tarjeta = document.createElement('div');
+            // tarjeta.classList.add('tarjeta');
+            // tarjeta.innerText = 'contenido';
+            // console.log('tarjeta');
+            // console.log(tarjeta);
+            // lista.appendChild(tarjeta)
+        });
+
+    </script>
+</body>
+
+</html>
