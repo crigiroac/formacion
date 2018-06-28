@@ -1,0 +1,268 @@
+/* // Board Background Select */
+
+.board-backgrounds-list-observer {
+  font-size: 0;
+  margin: 0 -4px 8px;
+
+  &.disabled .board-background-select {
+    opacity: 0.4;
+  }
+
+  .logo-loading {
+    clear: both;
+    margin: 20px auto;
+  }
+
+  .scroll-marker {
+    float: left;
+  }
+
+  .error,
+  .no-results {
+    font-size: 16px;
+    padding: 20px 0 0;
+  }
+
+  .no-results {
+    font-style: italic;
+    line-height: 27px;
+  }
+
+  .collection-title {
+    border-top: 1px solid @light-gray-300;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 30px 10px 15px;
+    padding-top: 30px;
+    text-align: left;
+  }
+}
+
+.board-background-select {
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 4px 8px;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 50%;
+  z-index: 1;
+
+  &.disabled {
+    opacity: 0.15;
+  }
+
+  .background-box {
+    background-color: @light-gray-300;
+    background-size: cover;
+    border-radius: 10px;
+    display: block;
+    height: 112px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &.background-tile {
+      background-size: 100%;
+    }
+
+    .uploading {
+      background: rgba(0, 0, 0, .5);
+      bottom: 0;
+      box-sizing: border-box;
+      color: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      height: 24px;
+      overflow: hidden;
+      padding: 3px 11px;
+      position: absolute;
+      text-decoration: underline;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+
+      .spinner {
+        margin-right: 5px;
+      }
+    }
+
+  }
+
+  &.board-background-select-upload {
+    overflow: hidden;
+
+    .background-box {
+      background-color: @light-gray-300;
+      border: 1px dashed #b9b9b9;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 0;
+      opacity: 0.7;
+      border-radius: 10px;
+
+      .icon-add {
+        text-align: center;
+        line-height: 110px;
+        width: 100%;
+      }
+
+    }
+
+    &:hover .background-box {
+      opacity: 1;
+    }
+
+    .upload-background {
+      bottom: 0;
+      cursor: pointer;
+      height: 60px;
+      left: 0;
+      margin: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+  }
+
+  .background-option, .background-info {
+    background: hsla(0, 0%, 0%, 0.6);
+    border-radius: 0 0 3px 3px;
+    color: hsl(0, 0%, 90%);
+    display: none;
+    .m-ellipsis();
+    font-size: 12px;
+    z-index: 2;
+    padding: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+  }
+
+  .background-option {
+    .text {
+      text-decoration: underline;
+    }
+  }
+
+  .background-option:hover {
+    background: hsla(0, 0%, 0%, 0.85);
+    color: hsl(0, 0%, 100%);
+  }
+
+  &:hover .background-option, .background-info {
+    display: block;
+  }
+
+  .background-box:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+}
+
+
+// State
+
+.board-background-select.is-still-uploading-background {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+
+  .background-box-unselectable {
+    opacity: .5;
+  }
+}
+
+.board-backgrounds-section-tiles + .board-menu-header-divider {
+  margin: 15px 0 20px;
+}
+
+.board-backgrounds-section-tile {
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  padding: 0 4px;
+  position: relative;
+  text-align: center;
+  width: 50%;
+
+  .image {
+    background-color: #ddd;
+    background-size: cover;
+    border-radius: 10px;
+    height: 112px;
+    margin-bottom: 8px;
+    width: 100%;
+
+    &:hover {
+      opacity: .8
+    }
+  }
+
+  &.board-backgrounds-colors-tile .image {
+    background-image: url(~images/colors@2x.jpg);
+  }
+
+  &.board-backgrounds-photos-tile .image {
+    background-image: url(~images/photos-thumbnail@3x.jpg);
+  }
+
+  .title {
+    margin-top: 12px;
+  }
+
+  small {
+    display: block;
+  }
+}
+
+.board-backgrounds-photos {
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .search-photos {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding-left: 38px;
+      font-size: 16px;
+    }
+
+    .icon-search {
+      position: absolute;
+      left: 5px;
+      top: 2px;
+    }
+  }
+
+
+
+  .board-backgrounds-list-observer {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 1;
+  }
+}
+
+
+
+/* // WEBPACK FOOTER //
+// ./app/stylesheets/components/views/board-menu/board-background-select.less */

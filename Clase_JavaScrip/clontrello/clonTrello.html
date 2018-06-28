@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clonTrello</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+
+        .b {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(124, 20, 20);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <a class="open-card-composer js-open-card-composer" href="#">Add a card…</a>
+    </div>
+    <div id="div2" class="b" draggable="true" ondragstart="drag(event)">b</div>
+    <div id="div2" class="b" draggable="true" ondragstart="drag(event)">c</div>
+    <script>
+        var divP = document.getElementById('div1');
+        botonCrearTarjeta.addEventListener('click', function () {
+            console.log('clic');
+            
+
+        });
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+
+</html>
