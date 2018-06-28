@@ -15,18 +15,35 @@
     margin: 0;
     padding: 0;
 }
-.nav-a{
-    font-family: 'Muli', cursive;
-    color: #43525A;
-    font-size: 1.14286rem;
+.left{
+    text-align:left;
+    width: 45%;
+}
+.right{
+    text-align: right;
+    width: 45%;
+}
+.center{
+    text-align: center;
+    align-items: center;
+    width: 20px;
 }
 .nav-item{
     flex: 1 1 100%;
     align-items: center;
     background-color: #f6f6f6;
     height: 30px;
+    border: 0.5px solid red;
+    height:60.3px;
+    
     /* padding: 18px; */
 }
+.nav-a{
+    font-family: 'Muli', cursive;
+    color: #43525A;
+    font-size: 1.14286rem;
+}
+
 .logo{
     margin: 0;
 }
