@@ -70,11 +70,13 @@ body{
     display: flex;
     background-color: #cccccc;
     background-image: url(https://www.modulosdesk.com/static/media/modulos-web-hero-bg-flip.0efcc100.jpg);
-    background-repeat: repeat-y;
+    /* background-repeat: repeat-y; */
     height: 900px;
     width: 2698px;
     /* overflow: hidden; */
     overflow-x: hidden;
+    /* background-position: center -1.42857rem; */
+    /* background-size: initial; */
     }
 
     
