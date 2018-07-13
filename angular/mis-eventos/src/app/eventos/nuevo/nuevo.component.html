@@ -1,0 +1,23 @@
+<p>
+ 
+
+</p>
+<div class="example-container">
+    <mat-form-field  >
+      <input  matInput placeholder="Nombre Evento" [(ngModel)]="evento.nombre">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Descripcion Evento"></textarea>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select placeholder="Ciudad">
+        <mat-option value="option">Bogota</mat-option>
+        <mat-option value="option">Cali</mat-option>
+      </mat-select>
+    </mat-form-field> 
+  </div>
+{{evento.nombre}}
+  <button mat-raised-button color="primary" (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button color="accent">Nuevo Evento</button>
